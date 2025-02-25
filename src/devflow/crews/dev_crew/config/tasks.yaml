@@ -1,0 +1,13 @@
+write_code:
+  description: >
+    write basic code in python without type hints to solve this: {problem}.
+  expected_output: >
+    return python code only
+  agent: code_writer
+
+review_code:
+  description: >
+    Review and improve python code written by junior developer by adding type hints and optimizing code.
+  expected_output: >
+    Optimized python code with type hints.
+  agent: code_reviewer
