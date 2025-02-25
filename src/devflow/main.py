@@ -5,49 +5,35 @@ from pydantic import BaseModel
 
 from crewai.flow import Flow, listen, start
 
-from devflow.crews.poem_crew.poem_crew import PoemCrew
+from devflow.crews.dev_crew.dev_crew import DevCrew
 
-
-class PoemState(BaseModel):
-    sentence_count: int = 1
-    poem: str = ""
-
-
-class PoemFlow(Flow[PoemState]):
+class DevFlow(Flow):
 
     @start()
-    def generate_sentence_count(self):
-        print("Generating sentence count")
-        self.state.sentence_count = randint(1, 5)
-
-    @listen(generate_sentence_count)
-    def generate_poem(self):
-        print("Generating poem")
+    def write_code(self):
+        print("Writing Code")
         result = (
-            PoemCrew()
-            .crew()
-            .kickoff(inputs={"sentence_count": self.state.sentence_count})
+            DevCrew().crew()
+            .kickoff(inputs = {"problem": "Write a code in python to print fibbonacci series."})
         )
-
-        print("Poem generated", result.raw)
-        self.state.poem = result.raw
-
-    @listen(generate_poem)
-    def save_poem(self):
-        print("Saving poem")
-        with open("poem.txt", "w") as f:
-            f.write(self.state.poem)
+        
+    @listen(write_code)
+    def review_code(self):
+        print("Optimizing code :")
+        result = (
+            DevCrew().review_code()
+        )
+        
+        print(result)
 
 
 def kickoff():
-    poem_flow = PoemFlow()
-    poem_flow.kickoff()
-
+    dev_flow = DevFlow()
+    dev_flow.kickoff()
 
 def plot():
-    poem_flow = PoemFlow()
-    poem_flow.plot()
-
+    dev_flow = DevFlow()
+    dev_flow.plot()
 
 if __name__ == "__main__":
     kickoff()

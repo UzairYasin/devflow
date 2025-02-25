@@ -9,7 +9,7 @@ dependencies = [
 ]
 
 [project.scripts]
-kickoff = "devflow.main1:kickoff"
+kickoff = "devflow.main:kickoff"
 plot = "devflow.main:plot"
 
 [build-system]
