@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 from random import randint
-
 from pydantic import BaseModel
-
 from crewai.flow import Flow, listen, start
-
 from devflow.crews.dev_crew.dev_crew import DevCrew
 
 class DevFlow(Flow):
@@ -25,7 +22,6 @@ class DevFlow(Flow):
         )
         
         print(result)
-
 
 def kickoff():
     dev_flow = DevFlow()
