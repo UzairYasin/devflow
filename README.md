@@ -1,6 +1,9 @@
-# Dev Crew
+# Dev Crew Intro
 
-Welcome to the Dev Crew project. This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. My goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+Welcome to the Dev Crew project. This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. My goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities. This crew consist of 2 agents code_write which is a junior developer and code_reviewer which a senior developer. Both have their own goals to accomplish.
+
+# Flow of Crew
+Flow starts with a problem statement, which is solved by a junior developer (code_writer agent) then the flow moves towards the senior developer (code_reviewer agent). Code reviewer agent will review and optimize the code written by junior developer and return finalized code.
 
 ## Installation
 
@@ -40,7 +43,7 @@ This command initializes the devFlow Crew, assembling the agents and assigning t
 
 ## Understanding Your Crew
 
-The devFlow Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+The devFlow Crew is composed of multiple AI agents, each with unique roles, goals. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
 
 ## Support
 
